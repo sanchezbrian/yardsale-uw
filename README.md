@@ -10,7 +10,7 @@ Students right now find themselves on Facebook marketplace, Offerup, etc. where 
 We will have two separate repositories for frontend and backend. The backend structure would contain multiple directories that hold the apis(endpoint, request, response), the entity models, and unit tests. Within the api’s directory, there will be separate directories for the different services. The frontend structure would contain directories for the different screens needed for the project and unit tests. Within the different screen directories, there will be directories for separate components.
 
 ### Milestones:
-### #Front end:
+#### Front end:
 1. Create an overall front-end prototype.
 2. Login page.
 3. Profile Screen
