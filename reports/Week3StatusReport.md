@@ -1,4 +1,4 @@
-###Team report (status update for your TA, including an agenda for the project meeting).
+### Team report (status update for your TA, including an agenda for the project meeting).
 Throughout this week, we worked on the requirements and policies homework assignment. We were able to outline our project in more depth 
 and think about what use cases we were going to need. We were also able to think about what tool sets we were gonna use in more depth. 
 We had some trouble figuring out exactly what backend provider we wanted to use to seem scalability and efficiency in mind which we will talk to our TA about. 
