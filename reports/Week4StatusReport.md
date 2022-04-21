@@ -19,7 +19,22 @@ to get, post, and update data in our backend.
 
 We had some trouble this week figuring out what should be included in our initial MVP since we thought what we had come up with was too little.
 We realized it was ulimately ok with we ended up with. This is because we had a great outline of what we want our website to have in the simplest form while
-also targeting the biggest features that truly make up what this project is. 
+also targeting the biggest features that truly make up what this project is. \
+
+### GOALS FOR THE NEXT WEEK
+They're still some tasks from the previous week we haven't completed due to not finalizing what our MVP should be.
+First, we are still ramping up with react and all made some progress into learning how to implement
+this with our project. We will spend more time so we feel more confident once starting implementation for the frontend.
+We also will need to complete the code architecture and the figmas of what we expect our screens to look like.
+We contacted UW to get access to their UW SSO for our login authentication so we will have to wait for a response until then 
+to start on this. 
+
+- Finalize MVP
+- Create Figmas
+- Make code architecture
+- Choose a database
+- Prioritize frontend
+- Have each group member choose a screen
 
 This next week we are planning to talk much more about decding on what architecture we want to use with views, controllers, and models. We also plan to start importing
 framkeworks and deciding on a build system to use. This will most likely be gradle.
