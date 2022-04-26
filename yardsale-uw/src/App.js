@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
 import MainProductList from "./components/MainProductList"
+import AddProduct from './components/AddProduct';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
@@ -19,10 +20,18 @@ export default class App extends Component {
     this.setState({products: products.data});
   }
 
+  addProduct = (product, callback) => {
+    let products = this.state.products.slice();
+    products.push(product);
+    this.setState({ products },  () => callback && callback());
+  }
+
   render() {
     return (
       <Context.Provider
-      value={{...this.state}}
+      value={{
+        ...this.state,
+        addProduct: this.addProduct}}
       >
       <Router ref={this.routerRef}>
         <div className="App">
@@ -53,12 +62,16 @@ export default class App extends Component {
                   <Link to="/products" className="navbar-item">
                     Products
                   </Link>
+                  <Link to="/add-product" className="navbar-item">
+                    Add Product
+                  </Link>
                 </div>
             </div>
           </nav>
           <Routes>
             <Route exact path="/" element={<MainProductList/>} />
             <Route exact path="/products" element={<MainProductList/>} />
+            <Route exact path="/add-product" element={<AddProduct/>} />
           </Routes>
         </div>
       </Router>
