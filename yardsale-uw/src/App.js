@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
 import MainProductList from "./components/MainProductList"
+import axios from "axios"
+import jwt_decode from "jwt-decode"
+import Context from './Context';
 
 export default class App extends Component {
   constructor(props) {
@@ -11,8 +14,16 @@ export default class App extends Component {
     this.routerRef = React.createRef();
   }
 
+  async componentDidMount() {
+    const products = await axios.get('http://localhost:3001/products');
+    this.setState({products: products.data});
+  }
+
   render() {
     return (
+      <Context.Provider
+      value={{...this.state}}
+      >
       <Router ref={this.routerRef}>
         <div className="App">
           <nav
@@ -46,11 +57,12 @@ export default class App extends Component {
             </div>
           </nav>
           <Routes>
-            <Route exact path="/" component={MainProductList} />
-            <Route exact path="/products" component={MainProductList} />
+            <Route exact path="/" element={<MainProductList/>} />
+            <Route exact path="/products" element={<MainProductList/>} />
           </Routes>
         </div>
       </Router>
+      </Context.Provider>
     );
   }
 }
