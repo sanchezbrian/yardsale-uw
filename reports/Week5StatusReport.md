@@ -1,7 +1,9 @@
 ### Team report (status update for your TA, including an agenda for the project meeting).
 
 ## Meeting Agenda:
-TODO
+Discussing measures for proper testing. We found that its difficult to write unit tests for front end. Our project requires proper testing involved and the front end would usually involve visual testing only. For this reason, we were thinking it would be necessary to create a backend. We are familiar with how backend testing works and would be able to flush out a test suite for operations on the backend. Looking for advice about this.
+
+Also, we noticed that a prototype of our project is due on May 10th. We wanted to get a clear picture of what exactly the requiremenets are so we can plan accordingly to deliver a satisfactory prototype by that date.
 
 ## Last Week
 They're still some tasks from the previous week we haven't completed due to not finalizing what our MVP should be.
