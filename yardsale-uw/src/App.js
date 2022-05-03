@@ -3,6 +3,7 @@ import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
 import MainProductList from "./components/MainProductList"
 import AddProduct from './components/AddProduct';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
@@ -101,18 +102,21 @@ export default class App extends Component {
                     Products
                   </Link>
                   )}
-                  
+
                   {this.state.user && (
                   <Link to="/add-product" className="navbar-item">
                     Add Product
                   </Link>
                 )}
+                    <Link to="/" className="navbar-item">
+                      Signup
+                    </Link>
                   {!this.state.user ? (
                     <Link to="/login" className="navbar-item">
                        Login
                     </Link>
                   ) : (
-                    <Link to="/" onClick={this.logout} className="navbar-item">
+                    <Link to="/login" onClick={this.logout} className="navbar-item">
                       Logout
                     </Link>
                 )}
@@ -120,7 +124,7 @@ export default class App extends Component {
             </div>
           </nav>
           <Routes>
-            <Route exact path="/" element={<Login/>} />
+            <Route exact path="/" element={<Signup/>} />
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/products" element={<MainProductList/>} />
             <Route exact path="/add-product" element={<AddProduct/>} />
