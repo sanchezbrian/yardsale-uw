@@ -36,5 +36,34 @@
             "price": 55.00,
             "description": "This dumbell set comes with multiple weights perfect for at home exercises."
         }
+    ],
+
+    "users": [
+        {
+            "name": "Brian Sanchez",
+            "email": "bigguy69@uw.edu",
+            "phone_num": "206-555-1234"
+        },
+        {
+            "name": "Nishith Palakodeti",
+            "email": "smartguy420@uw.edu",
+            "phone_num": "251-555-1234"
+        },
+        {
+            "name": "Abselom Sultanu",
+            "email": "fastguy8==)@uw.edu",
+            "phone_num": "702-555-6969"
+        },
+        {
+            "name": "Japeth Seaifu",
+            "email": "toughGuy789@uw.edu",
+            "phone_num": "402-555-1234"
+        },
+        {
+            "name": "Andres Eligio",
+            "email": "cuddi8=)@uw.edu",
+            "phone_num": "560-555-9669"
+        }
     ]
+
 }
