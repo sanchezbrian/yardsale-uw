@@ -58,7 +58,6 @@ export default class App extends Component {
   }
   
   logout = e => {
-    e.preventDefault();
     this.setState({ user: null });
     localStorage.removeItem("user");
   };
@@ -82,7 +81,7 @@ export default class App extends Component {
               <b className='navbar-item is-size-4'>YardSale UW</b>
               <label
                 role="button"
-                class="navbar-burger burger"
+                className ="navbar-burger burger"
                 aria-label="menu"
                 aria-expanded="false"
                 data-target="navbarBasicExample"
@@ -108,9 +107,11 @@ export default class App extends Component {
                     Add Product
                   </Link>
                 )}
+                  {!this.state.user && (
                     <Link to="/" className="navbar-item">
-                      Signup
+                      Sign Up
                     </Link>
+                  )}
                   {!this.state.user ? (
                     <Link to="/login" className="navbar-item">
                        Login
