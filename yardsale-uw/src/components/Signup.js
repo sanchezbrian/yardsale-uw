@@ -45,7 +45,7 @@ class Signup extends Component {
     const {name, email, phone_number, password} = this.state;
     return !this.props.context.user ? (
       <>
-        <div className="hero is-primary ">
+        <div className="hero is-link ">
           <div className="hero-body container">
             <h4 className="title">Sign Up</h4>
           </div>
