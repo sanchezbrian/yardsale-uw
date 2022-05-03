@@ -4,37 +4,43 @@
             "id": "1",
             "name": "Vintage UW Baseball-Tee",
             "price": 7.99,
-            "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens."
+            "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens.",
+            "email": "toughGuy789@uw.edu"
         },
         {
             "id": "2",
             "name": "CSE 143 Textbook",
             "price": 14.00,
-            "description": "This is a texbook pertaining to CSE 143 at the UW"
+            "description": "This is a texbook pertaining to CSE 143 at the UW",
+            "email": "bigguy69@uw.edu"
         },
         {
             "id": "3",
             "name": "iPad Pro 3rd Generation",
             "price": 459.00,
-            "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case"
+            "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case",
+            "email": "smartguy420@uw.edu"
         },
         {
             "id": "4",
             "name": "Nike Low Dunks (Pandas)",
             "price": 245.99,
-            "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5"
+            "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5",
+            "email": "fastguy8==)@uw.edu"
         },
         {
             "id": "5",
             "name": "K2 159cm Snowboard",
             "price": 145.00,
-            "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used"
+            "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used",
+            "email": "cuddi8=)@uw.edu"
         },
         {
             "id": "6",
             "name": "Dumbell Set",
             "price": 55.00,
-            "description": "This dumbell set comes with multiple weights perfect for at home exercises."
+            "description": "This dumbell set comes with multiple weights perfect for at home exercises.",
+            "email": "fastguy8==)@uw.edu"
         }
     ],
 
