@@ -1,9 +1,24 @@
-import React from "react";
-import axios from 'axios';
+
+import React, {useState} from "react";
+import './App.css';
+
+import Modal from "react-modal";
+
 
 const ProductItem = props => {
   const { product } = props;
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
+
+  function sayHello(st) {
+  }
+
   return (
+
     <div class="card">
   <div class="card-image">
     <figure class="image is-square">
@@ -18,14 +33,24 @@ const ProductItem = props => {
       {product.name}{" "}
     <span className="tag is-warning">${product.price}</span>
     </b> 
-      </div>
+    </div>
+      <Modal
+          isOpen={isOpen}
+          onRequestClose={toggleModal}
+          contentLabel="My dialog"
+      >
+        <div>
+            <h2> Contact Buyer</h2>
+            <p> Email: {product.email} {"\n"}</p>
+            <p> Name: {product.email} {"\n"}</p>
+        </div>
+        <button onClick={toggleModal}>Close modal</button>
+      </Modal>
     </div>
   </div>
 </div>
 
   );
 };
-
-
 
 export default ProductItem;
