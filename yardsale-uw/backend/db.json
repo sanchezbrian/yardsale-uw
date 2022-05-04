@@ -1,40 +1,67 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "name": "Vintage UW Baseball-Tee",
-            "price": 7.99,
-            "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens."
-        },
-        {
-            "id": "2",
-            "name": "CSE 143 Textbook",
-            "price": 14.00,
-            "description": "This is a texbook pertaining to CSE 143 at the UW"
-        },
-        {
-            "id": "3",
-            "name": "iPad Pro 3rd Generation",
-            "price": 459.00,
-            "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case"
-        },
-        {
-            "id": "4",
-            "name": "Nike Low Dunks (Pandas)",
-            "price": 245.99,
-            "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5"
-        },
-        {
-            "id": "5",
-            "name": "K2 159cm Snowboard",
-            "price": 145.00,
-            "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used"
-        },
-        {
-            "id": "6",
-            "name": "Dumbell Set",
-            "price": 55.00,
-            "description": "This dumbell set comes with multiple weights perfect for at home exercises."
-        }
-    ]
+  "users": [
+    {
+      "email": "brian@uw.edu",
+      "password": "$2a$10$PTjmwTI0nCRXX//ns/Ws5ubmHFFUHQN/ag1oYR0myqPUyT7jXZGPm",
+      "id": "bg7dexjpi19l2qmbuh5",
+      "name": "Brian Sanchez",
+      "phone_number": "2323232323"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Vintage UW Baseball-Tee",
+      "price": 7.99,
+      "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens."
+    },
+    {
+      "id": "2",
+      "name": "CSE 143 Textbook",
+      "price": 14,
+      "description": "This is a texbook pertaining to CSE 143 at the UW"
+    },
+    {
+      "id": "3",
+      "name": "iPad Pro 3rd Generation",
+      "price": 459,
+      "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case"
+    },
+    {
+      "id": "4",
+      "name": "Nike Low Dunks (Pandas)",
+      "price": 245.99,
+      "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5"
+    },
+    {
+      "id": "5",
+      "name": "K2 159cm Snowboard",
+      "price": 145,
+      "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used"
+    },
+    {
+      "id": "6",
+      "name": "Dumbell Set",
+      "price": 55,
+      "description": "This dumbell set comes with multiple weights perfect for at home exercises."
+    },
+    {
+      "id": "ckkm21ys1lbl2jhmgxq",
+      "name": "Space Heater",
+      "price": "15",
+      "description": "Space heater for a small 150 sq ft room. Used"
+    },
+    {
+      "id": "hmel41aow1jl2nq7egh",
+      "name": "Macbook Pro",
+      "price": "600",
+      "description": "used"
+    },
+    {
+      "id": "oatmn78ws9l2pg8m9w",
+      "name": "Ipad",
+      "price": "500",
+      "description": "A cool Ipad!"
+    }
+  ]
 }
