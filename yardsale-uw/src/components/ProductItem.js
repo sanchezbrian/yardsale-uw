@@ -20,7 +20,7 @@ const ProductItem = props => {
   return (
 
     <div class="card">
-  <div class="card-image">
+  <div class="card-image" onClick={toggleModal}>
     <figure class="image is-square">
       <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
       </img>  
@@ -41,8 +41,9 @@ const ProductItem = props => {
       >
         <div>
             <h2> Contact Buyer</h2>
+            <p> ProductName: {product.name} {"\n"}</p>
             <p> Email: {product.email} {"\n"}</p>
-            <p> Name: {product.email} {"\n"}</p>
+            <p> Description: {product.description}</p>
         </div>
         <button onClick={toggleModal}>Close modal</button>
       </Modal>
