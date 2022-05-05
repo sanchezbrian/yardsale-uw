@@ -88,5 +88,4 @@ to have a fully functional MVP. We also came together to finish the git setup an
 #### Nishith - Backend
 - Ramp up with React
 - Think about architecture
-- 
 
