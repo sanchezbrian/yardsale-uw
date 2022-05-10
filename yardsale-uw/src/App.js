@@ -7,6 +7,27 @@ import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDaYpplAT03YJXpE7-WD3QkLVTixMQDy7E",
+  authDomain: "yardsale-uw.firebaseapp.com",
+  projectId: "yardsale-uw",
+  storageBucket: "yardsale-uw.appspot.com",
+  messagingSenderId: "908488081877",
+  appId: "1:908488081877:web:220777cf4b6a392a557d5c",
+  measurementId: "G-WRDG2DCKVR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 export default class App extends Component {
   constructor(props) {
