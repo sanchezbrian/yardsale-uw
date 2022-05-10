@@ -14,14 +14,18 @@ const MainProductList = props => {
       </div>
       <br />
       <div className="container">
+        
         <div className="column columns is-multiline">
           {products && products.length ? (
             products.map((product, index) => (
+              <div class ="column is-one-quarter">
+                <div class="column is-align-content-space-around">
               <ProductItem
                 product={product}
                 key={index}
-                addToCart={props.context.addToCart}
               />
+              </div>
+              </div>
             ))
           ) : (
             <div className="column">
@@ -30,7 +34,7 @@ const MainProductList = props => {
               </span>
             </div>
           )}
-        </div>
+          </div>
       </div>
     </>
     );
