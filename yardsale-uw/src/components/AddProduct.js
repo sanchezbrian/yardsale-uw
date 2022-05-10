@@ -4,8 +4,6 @@ import { Redirect } from "react-router-dom";
 import { getDatabase, ref, push, child, get } from "firebase/database";
 import axios from 'axios';
 
-const database = getDatabase();
-
 const initState = {
   name: "",
   price: "",
@@ -38,7 +36,7 @@ class AddProduct extends Component {
         },
         () => this.setState(initState)
       );
-
+      const database = getDatabase();
       push(ref(database, 'Post/'), {
         name: name,
         price: price,
