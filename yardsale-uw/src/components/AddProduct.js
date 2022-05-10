@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import withContext from "../withContext";
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
-/*
+import { getDatabase, ref, push, child, get } from "firebase/database";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -24,7 +24,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-*/
+
+const database = getDatabase();
+
 const initState = {
   name: "",
   price: "",
@@ -57,6 +59,14 @@ class AddProduct extends Component {
         },
         () => this.setState(initState)
       );
+
+      push(ref(database, 'Post/'), {
+        name: name,
+        price: price,
+        description: description,
+        pid: id
+      }).catch(alert);
+
       this.setState(
         { flash: { status: 'is-success', msg: 'Product created successfully' }}
       );
