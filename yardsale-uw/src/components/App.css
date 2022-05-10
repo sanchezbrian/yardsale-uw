@@ -1,3 +1,7 @@
 .card:hover{
-    background-color: #956b11;
+    background-color: rgb(232, 211, 162);
+}
+
+.hero.is-link {
+    background-color: rgb(51, 0, 111);
 }
