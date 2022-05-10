@@ -1,79 +1,75 @@
 {
-  "products": [
-    {
-      "id": "1",
-      "name": "Vintage UW Baseball-Tee",
-      "price": 7.99,
-      "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens.",
-      "email": "toughGuy789@uw.edu"
-    },
-    {
-      "id": "2",
-      "name": "CSE 143 Textbook",
-      "price": 14,
-      "description": "This is a texbook pertaining to CSE 143 at the UW",
-      "email": "bigguy69@uw.edu"
-    },
-    {
-      "id": "3",
-      "name": "iPad Pro 3rd Generation",
-      "price": 459,
-      "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case",
-      "email": "smartguy420@uw.edu"
-    },
-    {
-      "id": "4",
-      "name": "Nike Low Dunks (Pandas)",
-      "price": 245.99,
-      "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5",
-      "email": "fastguy8==)@uw.edu"
-    },
-    {
-      "id": "5",
-      "name": "K2 159cm Snowboard",
-      "price": 145,
-      "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used",
-      "email": "cuddi8=)@uw.edu"
-    },
-    {
-      "id": "6",
-      "name": "Dumbell Set",
-      "price": 55,
-      "description": "This dumbell set comes with multiple weights perfect for at home exercises.",
-      "email": "fastguy8==)@uw.edu"
-    },
-    {
-      "id": "fquq3vjtw4gl2r7mart",
-      "name": "Oreos",
-      "price": "2.99",
-      "description": "Cream stuffed cookie sandwiches."
-    }
-  ],
   "users": [
     {
+      "email": "brian@uw.edu",
+      "password": "$2a$10$PTjmwTI0nCRXX//ns/Ws5ubmHFFUHQN/ag1oYR0myqPUyT7jXZGPm",
+      "id": "bg7dexjpi19l2qmbuh5",
       "name": "Brian Sanchez",
-      "email": "bigguy69@uw.edu",
-      "phone_num": "206-555-1234"
+      "phone_number": "2323232323"
     },
     {
-      "name": "Nishith Palakodeti",
-      "email": "smartguy420@uw.edu",
-      "phone_num": "251-555-1234"
+        "name": "Nishith Palakodeti",
+        "email": "smartguy420@uw.edu",
+        "phone_num": "251-555-1234"
     },
     {
-      "name": "Abselom Sultanu",
-      "email": "fastguy8==)@uw.edu",
-      "phone_num": "702-555-6969"
+        "name": "Abselom Sultanu",
+        "email": "fastguy8==)@uw.edu",
+        "phone_num": "702-555-6969"
     },
     {
-      "name": "Japeth Seaifu",
-      "email": "toughGuy789@uw.edu",
-      "phone_num": "402-555-1234"
+        "name": "Japeth Seaifu",
+        "email": "toughGuy789@uw.edu",
+        "phone_num": "402-555-1234"
     },
     {
-      "name": "Andres Eligio",
-      "email": "cuddi8=)@uw.edu",
-      "phone_num": "560-555-9669"
+        "name": "Andres Eligio",
+        "email": "cuddi8=)@uw.edu",
+        "phone_num": "560-555-9669"
     }
-  ]
+  ],
+  "products": [
+        {
+            "id": "1",
+            "name": "Vintage UW Baseball-Tee",
+            "price": 7.99,
+            "description": "This is a vintage UW baseball t-shirt from the 80's. This is a size medium in mens.",
+            "email": "toughGuy789@uw.edu"
+        },
+        {
+            "id": "2",
+            "name": "CSE 143 Textbook",
+            "price": 14.00,
+            "description": "This is a texbook pertaining to CSE 143 at the UW",
+            "email": "bigguy69@uw.edu"
+        },
+        {
+            "id": "3",
+            "name": "iPad Pro 3rd Generation",
+            "price": 459.00,
+            "description": "This is a slightly used 3rd generation iPad Pro with 128gb of storage. Include pen and magic keyboard case",
+            "email": "smartguy420@uw.edu"
+        },
+        {
+            "id": "4",
+            "name": "Nike Low Dunks (Pandas)",
+            "price": 245.99,
+            "description": "Nike Low Dunks in the panda color way. Never used. Original box. Size 9.5",
+            "email": "fastguy8==)@uw.edu"
+        },
+        {
+            "id": "5",
+            "name": "K2 159cm Snowboard",
+            "price": 145.00,
+            "description": "This is a K2 snowbard size 159 cm. This has only been used 2 times up on the mountains. Very slightly used",
+            "email": "cuddi8=)@uw.edu"
+        },
+        {
+            "id": "6",
+            "name": "Dumbell Set",
+            "price": 55.00,
+            "description": "This dumbell set comes with multiple weights perfect for at home exercises.",
+            "email": "fastguy8==)@uw.edu"
+        }
+    ]
 }
