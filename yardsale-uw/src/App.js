@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
+import { getDatabase, ref, push, child, get } from "firebase/database";
 
 export default class App extends Component {
   constructor(props) {
@@ -23,8 +24,10 @@ export default class App extends Component {
     user = user ? JSON.parse(user) : null;
     this.setState({ user });
 
-    const products = await axios.get('http://localhost:3001/products');
-    this.setState({products: products.data});
+    const products = await axios.get('https://yardsale-uw-default-rtdb.firebaseio.com/Post.json');
+    const arr = []
+    Object.keys(products.data).forEach(key => arr.push(products.data[key]))
+    this.setState({products: arr});
   }
 
   addProduct = (product, callback) => {
