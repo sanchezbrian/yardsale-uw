@@ -69,4 +69,9 @@ How to run the application:
   To test - run npm install followed by npm test. This happens automatically as we set up github actions
   to build and test everytime a new push/pull is made.
 
+### Functional Use Cases at the time of Beta Release:
+Users can sign up and log in
+User can add products after logging in
+Users can view and click on existing products to reveal seller information
+
 
