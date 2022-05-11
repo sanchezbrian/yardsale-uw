@@ -47,7 +47,7 @@ class Signup extends Component {
       <>
         <div className="hero is-link ">
           <div className="hero-body container">
-            <h4 className="title">Sign Up</h4>
+            <h4 className="title has-text-centered">Sign Up</h4>
           </div>
         </div>
         <br />

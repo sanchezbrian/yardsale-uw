@@ -33,7 +33,7 @@ class Login extends Component {
       <>
         <div className="hero is-link ">
           <div className="hero-body container">
-            <h4 className="title">Login</h4>
+            <h4 className="title has-text-centered">Login</h4>
           </div>
         </div>
         <br />

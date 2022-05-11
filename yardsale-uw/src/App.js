@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
   constructor(props) {
