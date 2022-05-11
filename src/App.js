@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
 import MainProductList from "./components/MainProductList"
 import AddProduct from './components/AddProduct';
-import Login from './components/Login';
+import Login from "./components/Login"
 import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
