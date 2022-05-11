@@ -11,18 +11,18 @@ const ProductItem = (props) => {
   }
 
   return (
-    <div class="card">
-      <div class="card-image" onClick={toggleModal}>
-        <figure class="image is-square">
+    <div className="card">
+      <div className="card-image" onClick={toggleModal}>
+        <figure className="image is-square">
           <img
             src="https://bulma.io/images/placeholders/128x128.png"
             alt="Placeholder"
           ></img>
         </figure>
       </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
+      <div className="card-content">
+        <div className="media">
+          <div className="media-content">
             <b style={{ textTransform: "capitalize" }}>
               {product.name}{" "}
               <span className="tag is-warning">${product.price}</span>
@@ -44,11 +44,11 @@ const ProductItem = (props) => {
             <Modal.Header>
               <Modal.Title>Email</Modal.Title>
             </Modal.Header>
-            <div class="box">{product.email}</div>
+            <div className="box">{product.email}</div>
             <Modal.Header>
               <Modal.Title>Description</Modal.Title>
             </Modal.Header>
-            <div class="box">{product.description}</div>
+            <div className="box">{product.description}</div>
             <Modal.Footer>
               <Button variant="secondary" onClick={toggleModal}>
                 Close
