@@ -71,7 +71,7 @@ export default class App extends Component {
         addProduct: this.addProduct,
         login:this.login}}
       >
-      <Router ref={this.routerRef}>
+      <Router>
         <div className="App">
           <nav
           className='navbar container'

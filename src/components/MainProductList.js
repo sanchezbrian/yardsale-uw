@@ -17,12 +17,11 @@ const MainProductList = props => {
         
         <div className="column columns is-multiline">
           {products && products.length ? (
-            products.map((product, index) => (
-              <div class ="column is-one-quarter">
+            products.map((product) => (
+              <div class ="column is-one-quarter" key={product.id}>
                 <div class="column is-align-content-space-around">
               <ProductItem
                 product={product}
-                key={index}
               />
               </div>
               </div>

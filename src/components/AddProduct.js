@@ -31,6 +31,7 @@ class AddProduct extends Component {
 
       this.props.context.addProduct(
         {
+          id,
           name,
           price,
           description,
