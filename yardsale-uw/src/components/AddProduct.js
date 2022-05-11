@@ -18,20 +18,23 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description } = this.state;
-
+    const { user } = this.props.context;
+    let email = user.email;
+    console.log(user);
     if (name && price) {
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
       await axios.post(
         'http://localhost:3001/products',
-        { id, name, price, description },
+        { id, name, price, description, email},
       )
 
       this.props.context.addProduct(
         {
           name,
           price,
-          description
+          description,
+          email
         },
         () => this.setState(initState)
       );
@@ -55,7 +58,7 @@ class AddProduct extends Component {
           <>
             <div className="hero is-link">
                 <div className="hero-body container">
-                    <h4 className="title">Add Product</h4>
+                    <h4 className="title has-text-centered">Add Product</h4>
                 </div>
             </div>
             <br></br>
