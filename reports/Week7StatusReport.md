@@ -2,8 +2,7 @@
 
 ## Meeting Agenda:
 
-- Talk about how our app is progressing and if we are making enough progress each week
-- What would you want our beta release to look like. How much more would we need with our app.
+- Do you have any feedback on what we can do better that you have seen? In terms of communication with you, or anything in general.
 
 ## Last Week
 Last week was great in terms of progress and learning React even deeper. We were able to finish up a login and signup
@@ -25,6 +24,7 @@ We have also been pretty stuck on integrating SSO authentication with the way UW
 them on what other ways their are to integrate what we want. Currently, the docs and resources they sent ask us to set
 up microsoft servers that we are not too familiar with and how any of that works and connects with each other.
 ## This week
+
 This week went really well in terms of our current process and finishing our Beta. As of we have been working on switching
 from the local database from db.json to a cloud-hosted database. After some research with what would work best for
 our product we decided on using Firebase. The switch is almost done, and we have now focused our efforts in adding a file
@@ -32,6 +32,11 @@ upload to the database so that a user can submit photos along with the product. 
 to our testing and write new test to ensure our new database is working as intended. Firebase also provided a way of
 email authentication we plan on exploring that to see if it will fit our use cases. We have merged all of our work on to
 the master branch and all worked very well together.
+
+We were also able to merge everything into the master branch that we have used for our beta release. We also changed the file structure so that our CI using Github Actions is able to find the tests and automatically run them according to our script.
+
+Transitioning from our in-memory backend to Firebase has been a bit of a struggle figuring out how to get the items that have been posted just because it's new documentation we have to read and learn. As of now, we have been able to use axios to call endpoints that firebase automatically generates. We also looked into what functionality firebase has with login and signup and we read that they have email confirmation as a way to login/signup so we will try and figure that out to use for now as we still figure out UW SSO. We also realized that the modules we were using for our mock databse was doing alot of functioanilty that we did not have to worry abut signing in and hashing passwords. So we just have to read the docmentation on firebase to see what we can use and leverage to help us out with this switch.
+
 ### GOALS FOR THE NEXT WEEK
 With next week, we still are going to continue learning and improving with our knowledge with Mocha and Enzyme so that
 we can write some more extensive test as well as new ones for the new database. We plan to finish setting up the
