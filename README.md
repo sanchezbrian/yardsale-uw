@@ -52,6 +52,9 @@ Process Management: Pull data from the database, run algorithms, process the dat
 User Database and Product Database and other required databases such as favorites, etc.: SQL Databases, may look at other types of DBMS (cloud including) if they are more suitable to our needs.
 Source Control: Github
 
+### Yardsale-UW Living Document
+https://docs.google.com/document/d/1rqT9nvWCRKEx_4AztqSvhUb9JB40Gl_3U8ca3pKi7OM/edit#heading=h.21khp3obqpvd
+
 ### GitHub repo
 https://github.com/sanchezbrian/yardsale-uw.git
 
