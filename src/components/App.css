@@ -1,0 +1,10 @@
+.card:hover{
+    background-color: rgb(232, 211, 162);
+}
+.product-photo{
+    height: 400px;
+    width: 400px;  
+}
+.hero.is-link {
+    background-color: rgb(51, 0, 111);
+}

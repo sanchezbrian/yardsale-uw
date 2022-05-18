@@ -31,9 +31,9 @@ We will have two separate repositories for frontend and backend. The backend str
 
 
 ### Use Cases (Functional Requirements):
-Users should be able to look and buy items that they want to purchase
-Users should be able to sell and post items they want to give away
-Users should be able to create profiles for others to see if they are interested
+- Users should be able to look and buy items that they want to purchase
+- Users should be able to sell and post items they want to give away
+- Users should be able to create profiles for others to see if they are interested
 
 ### Non-functional Requirements:
 Be able to support a large number of users on the system at the same time while also being able to store lots of user data.
@@ -52,12 +52,24 @@ Process Management: Pull data from the database, run algorithms, process the dat
 User Database and Product Database and other required databases such as favorites, etc.: SQL Databases, may look at other types of DBMS (cloud including) if they are more suitable to our needs.
 Source Control: Github
 
+### Yardsale-UW Living Document
+https://docs.google.com/document/d/1rqT9nvWCRKEx_4AztqSvhUb9JB40Gl_3U8ca3pKi7OM/edit#heading=h.21khp3obqpvd
+
 ### GitHub repo
 https://github.com/sanchezbrian/yardsale-uw.git
 
 ### Initial Project Proposal
 https://docs.google.com/document/d/1X6cDkh0zGpwjwSFYTDaUMRYVx3LB3jjG6I4oAcKU0Vk/edit?usp=sharing
 
+### Instructions:
+#### How to run the application:
+  - packages you need to install before running the application - node
+  npm install - [react-router-dom, json-server json-server-auth, axios, jwt-decode, bulma]
+  - Connect the database using - './node_modules/.bin/json-server-auth ./backend/db.json --port 3001'
+  - npm start to start the application on default web browser
+
+  #### To test - run npm install followed by npm test. This happens automatically as we set up github actions
+  #### to build and test everytime a new push/pull is made.
 
 ### Instructions:
 How to run the application:

@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom"
 import MainProductList from "./components/MainProductList"
 import AddProduct from './components/AddProduct';
-import Login from './components/Login';
+import Login from "./components/Login"
 import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
 import { getDatabase, ref, push, child, get } from "firebase/database";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -73,7 +74,7 @@ export default class App extends Component {
         addProduct: this.addProduct,
         login:this.login}}
       >
-      <Router ref={this.routerRef}>
+      <Router>
         <div className="App">
           <nav
           className='navbar container'

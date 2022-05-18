@@ -9,7 +9,7 @@ const MainProductList = props => {
     <>
       <div className="hero is-link">
         <div className="hero-body container">
-          <h4 className="title">Our Products</h4>
+          <h4 className="title has-text-centered">Our Products</h4>
         </div>
       </div>
       <br />
@@ -17,12 +17,11 @@ const MainProductList = props => {
         
         <div className="column columns is-multiline">
           {products && products.length ? (
-            products.map((product, index) => (
-              <div class ="column is-one-quarter">
-                <div class="column is-align-content-space-around">
+            products.map((product) => (
+              <div className ="column is-one-quarter" key={product.id}>
+                <div className="column is-align-content-space-around">
               <ProductItem
                 product={product}
-                key={index}
               />
               </div>
               </div>
