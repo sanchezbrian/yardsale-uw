@@ -7,7 +7,6 @@ import Signup from './components/Signup';
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import Context from './Context';
-import { getDatabase, ref, push, child, get } from "firebase/database";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
@@ -35,6 +34,11 @@ export default class App extends Component {
     let products = this.state.products.slice();
     products.push(product);
     this.setState({ products },  () => callback && callback());
+  }
+
+  loginUser = (user) => {
+    this.setState({ user });
+    localStorage.setItem("user", JSON.stringify(user));
   }
 
   login = async (email, password) => {
@@ -72,7 +76,8 @@ export default class App extends Component {
       value={{
         ...this.state,
         addProduct: this.addProduct,
-        login:this.login}}
+        login:this.login,
+        loginUser:this.loginUser}}
       >
       <Router>
         <div className="App">

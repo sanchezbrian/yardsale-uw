@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import withContext from "../withContext";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 class Login extends Component {
   constructor(props) {
@@ -9,6 +10,28 @@ class Login extends Component {
       username: "",
       password: ""
     };
+  }
+
+  signInWithGoogle = (e) => {
+    e.preventDefault();
+
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      hd: 'uw.edu'
+    });
+
+    signInWithPopup(auth, provider).then((res) => {
+      const credential = GoogleAuthProvider.credentialFromResult(res);
+      console.log(res.user.email);
+      let user = {
+        email: res.user.email,
+        displayName: res.user.displayName
+      }
+      this.props.context.loginUser(user);
+    }).catch((error) => {
+      console.log(error.message)
+    })
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
@@ -38,7 +61,7 @@ class Login extends Component {
         </div>
         <br />
         <br />
-        <form onSubmit={this.login}>
+        <form onSubmit={this.signInWithGoogle}>
           <div className="columns is-mobile is-centered">
             <div className="column is-one-third">
               <div className="field">
