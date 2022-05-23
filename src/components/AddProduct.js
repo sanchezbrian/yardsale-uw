@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import withContext from "../withContext";
 import { Redirect } from "react-router-dom";
-import { getDatabase, ref, push, child, get } from "firebase/database";
+import { getDatabase, ref, push, child, get, set } from "firebase/database";
 import axios from 'axios';
 
 const initState = {
@@ -25,10 +25,10 @@ class AddProduct extends Component {
     if (name && price) {
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
-      await axios.post(
-        'http://localhost:3001/products',
-        { id, name, price, description, email},
-      )
+      // await axios.post(
+      //   'http://localhost:3001/products',
+      //   { id, name, price, description, email},
+      // )
 
       this.props.context.addProduct(
         {
@@ -41,7 +41,7 @@ class AddProduct extends Component {
         () => this.setState(initState)
       );
       const database = getDatabase();
-      push(ref(database, 'Post/' + id), {
+      set(ref(database, 'Post/' + id), {
         name: name,
         email: email,
         price: price,
