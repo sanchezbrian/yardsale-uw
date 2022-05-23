@@ -33,6 +33,13 @@
       "id": "3q4lw3yim2fl2zgjsog",
       "name": "Abselom Sultanu",
       "phone_number": "7028268271"
+    },
+    {
+      "email": "tempnvsp@uw.edu",
+      "password": "$2a$10$xC6rn4nz9XqH0lPQ5MAK9.Q7XSZ61G2SmZbFYXLDZHFpAoTLCYYWO",
+      "id": "3dwm8f5iuyul3iaapxl",
+      "name": "Nishith Palakodeti",
+      "phone_number": "47319845923"
     }
   ],
   "products": [
@@ -79,28 +86,11 @@
       "email": "fastguy8==)@uw.edu"
     },
     {
-      "id": "pbbz2sldslal2zjvpzw",
-      "name": "Pen",
-      "price": "8.11",
-      "description": "Pen used by famous person"
-    },
-    {
-      "id": "8geoujl8qkhl2zjzita",
-      "name": "CSE311 Exam Answers",
-      "price": "150",
-      "description": "Answers to CSE311 SP22 midterm"
-    },
-    {
-      "id": "v7tllfhr9ecl2zk0ys6",
-      "name": "20 Dollar Bill",
-      "price": "20.01",
-      "description": "Your very own bill"
-    },
-    {
-      "id": "1lj0t6g1mryl2zk2jqd",
-      "name": "Choppa",
-      "price": "100",
-      "description": "Don't worry about it"
+      "id": "rps7j4xp2il3iabi4w",
+      "name": "User Profile Test",
+      "price": "10",
+      "description": "User Profile Test",
+      "email": "tempnvsp@uw.edu"
     }
   ]
 }
