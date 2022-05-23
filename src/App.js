@@ -25,14 +25,21 @@ export default class App extends Component {
     user = user ? JSON.parse(user) : null;
     this.setState({ user });
 
-    const products = await axios.get('http://localhost:3001/products');
-    this.setState({products: products.data});
+    const products = await axios.get('https://yardsale-uw-default-rtdb.firebaseio.com/Post.json');
+    const arr = []
+    Object.keys(products.data).forEach(key => arr.push(products.data[key]))
+    this.setState({products: arr});
   }
 
   addProduct = (product, callback) => {
     let products = this.state.products.slice();
     products.push(product);
     this.setState({ products },  () => callback && callback());
+  }
+
+  loginUser = (user) => {
+    this.setState({ user });
+    localStorage.setItem("user", JSON.stringify(user));
   }
 
   login = async (email, password) => {
@@ -70,7 +77,8 @@ export default class App extends Component {
       value={{
         ...this.state,
         addProduct: this.addProduct,
-        login:this.login}}
+        login:this.login,
+        loginUser:this.loginUser}}
       >
       <Router>
         <div className="App">

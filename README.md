@@ -71,7 +71,19 @@ https://docs.google.com/document/d/1X6cDkh0zGpwjwSFYTDaUMRYVx3LB3jjG6I4oAcKU0Vk/
   #### To test - run npm install followed by npm test. This happens automatically as we set up github actions
   #### to build and test everytime a new push/pull is made.
 
+### Instructions:
+How to run the application:
+  packages you need to install before running the application - node
+  npm install - [react-router-dom, json-server json-server-auth, axios, jwt-decode, bulma]
+  Connect the database using - ./node_modules/.bin/json-server-auth ./backend/db.json --port 3001
+  npm start to start the application on default web browser
+
+  To test - run npm install followed by npm test. This happens automatically as we set up github actions
+  to build and test everytime a new push/pull is made.
+
 ### Functional Use Cases at the time of Beta Release:
-- Users can sign up and log in
-- User can add products after logging in
-- Users can view and click on existing products to reveal seller information
+Users can sign up and log in
+User can add products after logging in
+Users can view and click on existing products to reveal seller information
+
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import withContext from "../withContext";
 import { Redirect } from "react-router-dom";
+import { getDatabase, ref, push, child, get } from "firebase/database";
 import axios from 'axios';
 
 const initState = {
@@ -39,6 +40,15 @@ class AddProduct extends Component {
         },
         () => this.setState(initState)
       );
+      const database = getDatabase();
+      push(ref(database, 'Post/' + id), {
+        name: name,
+        email: email,
+        price: price,
+        description: description,
+        pid: id
+      }).catch(alert);
+
       this.setState(
         { flash: { status: 'is-success', msg: 'Product created successfully' }}
       );
