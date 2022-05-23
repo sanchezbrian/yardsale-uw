@@ -1,19 +1,32 @@
 import React, { Component } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import withContext from "../withContext";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { child, getDatabase, ref, get, set } from "firebase/database";
+import { computeStyles } from "@popperjs/core";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: ""
+      name: "",
+      number: "",
     };
+  }
+
+  setUser = (name, email, number, uid) => {
+    let user = {
+      email: email,
+      name: name,
+      phone_number: number,
+      uid: uid
+    }
+    this.props.context.loginUser(user);
   }
 
   signInWithGoogle = (e) => {
     e.preventDefault();
+
 
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -23,12 +36,33 @@ class Login extends Component {
 
     signInWithPopup(auth, provider).then((res) => {
       const credential = GoogleAuthProvider.credentialFromResult(res);
-      console.log(res.user.email);
-      let user = {
-        email: res.user.email,
-        displayName: res.user.displayName
-      }
-      this.props.context.loginUser(user);
+      let uid = res.user.uid;
+      const db = getDatabase();
+      const auth = getAuth();
+
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `User/${uid}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          let data = snapshot.val();
+          this.setUser(data.name, data.email, data.phone_number, data.uid);
+        } else {
+          const { name, number } = this.state;
+          if (!name || !number) {
+            return this.setState({ error: "Fill all fields!" });
+          }
+          set(ref(db, 'User/' + uid), {
+            email: res.user.email,
+            name: name,
+            phone_number: number,
+            uid: uid
+          });
+          this.setUser(name, res.user.email, number, uid);
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
+
+      console.log(res.user);
     }).catch((error) => {
       console.log(error.message)
     })
@@ -65,20 +99,20 @@ class Login extends Component {
           <div className="columns is-mobile is-centered">
             <div className="column is-one-third">
               <div className="field">
-                <label className="label">Email: </label>
+                <label className="label">Full Name: </label>
                 <input
                   className="input"
-                  type="email"
-                  name="username"
+                  type="text"
+                  name="name"
                   onChange={this.handleChange}
                 />
               </div>
               <div className="field">
-                <label className="label">Password: </label>
+                <label className="label">Phone Number: </label>
                 <input
                   className="input"
-                  type="password"
-                  name="password"
+                  type="number"
+                  name="number"
                   onChange={this.handleChange}
                 />
               </div>
@@ -96,9 +130,7 @@ class Login extends Component {
           </div>
         </form>
       </>
-    ) : (
-      <Navigate to="/products" />
-    );
+    ) : <Navigate to="/products" />
   }
 }
 
