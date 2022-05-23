@@ -43,6 +43,7 @@ class AddProduct extends Component {
       const database = getDatabase();
       push(ref(database, 'Post/'), {
         name: name,
+        email: email,
         price: price,
         description: description,
         pid: id
