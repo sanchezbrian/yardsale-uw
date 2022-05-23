@@ -41,7 +41,7 @@ class AddProduct extends Component {
         () => this.setState(initState)
       );
       const database = getDatabase();
-      push(ref(database, 'Post/'), {
+      push(ref(database, 'Post/' + id), {
         name: name,
         email: email,
         price: price,
