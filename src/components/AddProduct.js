@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { getDatabase, ref, push, child, get, set } from "firebase/database";
 import axios from 'axios';
 import storage from "../index";
+import { getStorage, ref as sRef, uploadBytes } from "firebase/storage";
 
 const initState = {
   name: "",
@@ -70,8 +71,11 @@ class AddProduct extends Component {
     console.log(image);
     if(image == null)
       return;
-    storage.ref(`/images/${image.name}`).put(image)
-      .on("state_changed" , alert("success") , alert);
+    const storageRef = sRef(storage, `/images/${image.name}`);
+    uploadBytes(storageRef, image).then((snapshot) => {
+      console.log('Uploaded a blob or file!');
+    });
+    // storage.sRef(`/images/${image.name}`).put(image)
   }
 
   render() {
