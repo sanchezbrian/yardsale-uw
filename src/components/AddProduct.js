@@ -3,11 +3,13 @@ import withContext from "../withContext";
 import { Redirect } from "react-router-dom";
 import { getDatabase, ref, push, child, get, set } from "firebase/database";
 import axios from 'axios';
+import storage from "../index";
 
 const initState = {
   name: "",
   price: "",
-  description: ""
+  description: "",
+  image:""
 };
 
 class AddProduct extends Component {
@@ -62,6 +64,16 @@ class AddProduct extends Component {
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
+  upload = ()=>{
+    const image = this.state.image;
+    console.log("upload pressed");
+    console.log(image);
+    if(image == null)
+      return;
+    storage.ref(`/images/${image.name}`).put(image)
+      .on("state_changed" , alert("success") , alert);
+  }
+
   render() {
       const {name, price, description } = this.state;
 
@@ -110,6 +122,11 @@ class AddProduct extends Component {
                         value={description}
                         onChange={this.handleChange}
                         />
+                    </div>
+                    <div className="field">
+                      <label className="label">Description: </label>
+                      <input type="file" onChange={(e)=>{this.setState({image: e.target.files[0]})}}/>
+                      <button onClick={this.upload}>Upload</button>
                     </div>
                     {this.state.flash && (
                         <div className={`notification ${this.state.flash.status}`}>
