@@ -3,7 +3,7 @@ import withContext from "../withContext";
 import { Redirect } from "react-router-dom";
 import { getDatabase, ref, push, child, get, set } from "firebase/database";
 import axios from 'axios';
-import storage from "../index";
+// import { storage } from "../index";
 import { getStorage, ref as sRef, uploadBytes } from "firebase/storage";
 
 const initState = {
@@ -22,7 +22,7 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description, image } = this.state;
-    const storageRef = sRef(storage, `/images/${image.name}`);
+    const storageRef = sRef(getStorage(), `/images/${image.name}`);
     const { user } = this.props.context;
     let email = user.email;
     let imageName = image.name;
