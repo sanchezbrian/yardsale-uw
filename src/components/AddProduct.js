@@ -25,9 +25,7 @@ class AddProduct extends Component {
     const storageRef = sRef(storage, `/images/${image.name}`);
     const { user } = this.props.context;
     let email = user.email;
-    console.log(user);
-    console.log("check");
-    console.log(image != null);
+    let imageName = image.name;
     if (name && price && image) {
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
@@ -43,6 +41,7 @@ class AddProduct extends Component {
           price,
           description,
           email,
+          imageName,
         },
         () => this.setState(initState)
       );
@@ -75,7 +74,7 @@ class AddProduct extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
   render() {
-    const { name, price, description } = this.state;
+    const { name, price, description, image } = this.state;
 
     return (
       <>
@@ -132,6 +131,7 @@ class AddProduct extends Component {
                       type="file"
                       onChange={(e) => { this.setState({ image: e.target.files[0] }) }}
                       accept="image/png, image/gif, image/jpeg"
+                      value={""}
                       name="resume"/>
                       <span class="file-cta">
                         <span class="file-icon">
