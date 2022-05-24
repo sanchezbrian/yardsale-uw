@@ -21,11 +21,14 @@ class AddProduct extends Component {
 
   save = async (e) => {
     e.preventDefault();
-    const { name, price, description } = this.state;
+    const { name, price, description, image } = this.state;
+    const storageRef = sRef(storage, `/images/${image.name}`);
     const { user } = this.props.context;
     let email = user.email;
     console.log(user);
-    if (name && price) {
+    console.log("check");
+    console.log(image != null);
+    if (name && price && image) {
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
       // await axios.post(
@@ -39,7 +42,7 @@ class AddProduct extends Component {
           name,
           price,
           description,
-          email
+          email,
         },
         () => this.setState(initState)
       );
@@ -49,8 +52,14 @@ class AddProduct extends Component {
         email: email,
         price: price,
         description: description,
-        pid: id
+        pid: id,
+        image: image.name
       }).catch(alert);
+
+      console.log(image);
+        uploadBytes(storageRef, image).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+        });
 
       this.setState(
         { flash: { status: 'is-success', msg: 'Product created successfully' }}
@@ -64,19 +73,6 @@ class AddProduct extends Component {
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
-
-  upload = ()=>{
-    const image = this.state.image;
-    console.log("upload pressed");
-    console.log(image);
-    if(image == null)
-      return;
-    const storageRef = sRef(storage, `/images/${image.name}`);
-    uploadBytes(storageRef, image).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-    });
-    // storage.sRef(`/images/${image.name}`).put(image)
-  }
 
   render() {
       const {name, price, description } = this.state;
@@ -129,8 +125,11 @@ class AddProduct extends Component {
                     </div>
                     <div className="field">
                       <label className="label">Description: </label>
-                      <input type="file" onChange={(e)=>{this.setState({image: e.target.files[0]})}}/>
-                      <button onClick={this.upload}>Upload</button>
+                      <input
+                        type="file"
+                        onChange={(e)=>{this.setState({image: e.target.files[0]})}}
+                        accept="image/png, image/gif, image/jpeg"
+                      />
                     </div>
                     {this.state.flash && (
                         <div className={`notification ${this.state.flash.status}`}>
