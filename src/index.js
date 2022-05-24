@@ -5,9 +5,10 @@ import "bulma/css/bulma.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // Import the functions you need from the SDKs you need
-import { getDatabase, ref, push, child, get } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getStorage } from "firebase/storage";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,6 +27,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const storage = getStorage(app);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,3 +41,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+export default storage;
