@@ -29,11 +29,6 @@ const ProductItem = (props) => {
       .catch((error) => {
         // Handle any errors
       });
-
-    return (<>
-      <img src={img} alt="Error" style={{ width: 50, height: 50 }} />
-      Get an umbrella, it will rain today!
-    </>);
   }
 
   function toggleModal() {
@@ -43,7 +38,7 @@ const ProductItem = (props) => {
 
   return (
     <div className="card">
-      <div className="card-image" onClick={toggleModal}>
+      <div id="clickDiv" className="card-image" onClick={toggleModal}>
         <figure className="image is-square">
           <img
             id={product.image}
