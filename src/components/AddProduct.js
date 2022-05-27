@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import withContext from "../withContext";
-import { Redirect } from "react-router-dom";
-import { getDatabase, ref, push, child, get, set } from "firebase/database";
-import axios from 'axios';
+// import { Redirect } from "react-router-dom";
+import { getDatabase, ref, set } from "firebase/database";
+// import axios from 'axios';
 // import { storage } from "../index";
 import { getStorage, ref as sRef, uploadBytes } from "firebase/storage";
 
@@ -74,7 +74,7 @@ class AddProduct extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
   render() {
-    const { name, price, description, image } = this.state;
+    const { name, price, description } = this.state;
 
     return (
       <>

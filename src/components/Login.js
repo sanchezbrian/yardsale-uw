@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import withContext from "../withContext";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { child, getDatabase, ref, get, set } from "firebase/database";
-import { computeStyles } from "@popperjs/core";
+// import { computeStyles } from "@popperjs/core";
 
 class Login extends Component {
   constructor(props) {
@@ -35,10 +35,10 @@ class Login extends Component {
     });
 
     signInWithPopup(auth, provider).then((res) => {
-      const credential = GoogleAuthProvider.credentialFromResult(res);
+      //const credential = GoogleAuthProvider.credentialFromResult(res);
       let uid = res.user.uid;
       const db = getDatabase();
-      const auth = getAuth();
+      //const auth = getAuth();
 
       const dbRef = ref(getDatabase());
       get(child(dbRef, `User/${uid}`)).then((snapshot) => {

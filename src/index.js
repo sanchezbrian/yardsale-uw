@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM, {createRoot} from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import './index.css';
 import "bulma/css/bulma.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries

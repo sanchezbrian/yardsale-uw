@@ -17,7 +17,6 @@ const ProductItem = (props) => {
     const storage = getStorage();
     let image = product.image;
     let path = `images/${image}`;
-    let img;
     getDownloadURL(sRef(storage, path))
       .then((url) => {
 
