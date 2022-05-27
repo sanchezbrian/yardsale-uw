@@ -66,7 +66,7 @@ class AddProduct extends Component {
 
     } else {
       this.setState(
-        { flash: { status: 'is-danger', msg: 'Please enter name and price' } }
+        { flash: { status: 'is-danger', msg: 'Please enter name and price and image' } }
       );
     }
   };
