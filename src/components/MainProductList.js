@@ -5,6 +5,8 @@ import withContext from "../withContext"
 const MainProductList = props => {
     const { products } = props.context;
 
+    let availableProducts = products.filter(product => 0 === product.sold);
+
     return (
     <>
       <div className="hero is-link">
@@ -14,10 +16,9 @@ const MainProductList = props => {
       </div>
       <br />
       <div className="container">
-        
         <div className="column columns is-multiline">
-          {products && products.length ? (
-            products.map((product) => (
+          {availableProducts && availableProducts.length ? (
+            availableProducts.map((product) => (
               <div className ="column is-one-quarter" key={product.id}>
                 <div className="column is-align-content-space-around">
               <ProductItem

@@ -1,6 +1,7 @@
 import React from "react";
 import ProductItem from "./ProductItem"
 import withContext from "../withContext"
+import { getDatabase, ref, update } from "firebase/database";
 
 const UserProfile = props => {
   const { products, user } = props.context;
@@ -10,6 +11,14 @@ const UserProfile = props => {
     userProducts = null;
   } else {
    userProducts = products.filter(product => user.email === product.email)
+  }
+
+  function sold(e) {
+    const database = getDatabase();
+    update(ref(database, 'Post/' + e.target.id), {
+      sold: 1
+    }).catch(alert);
+    alert("Item sold");
   }
 
   return (
@@ -23,12 +32,13 @@ const UserProfile = props => {
         <div className="column columns is-multiline">
           {userProducts && userProducts.length ? (
             userProducts.map((product) => (
-              <div className ="column is-one-quarter" key={product.id}>
+              <div className="column is-one-quarter" key={product.pid}>
                 <div className="column is-align-content-space-around">
                   <ProductItem
                     product={product}
                   />
                 </div>
+                <button className="btn is-danger" onClick={sold} id={product.pid}>Sold</button>
               </div>
             ))
           ) : (
