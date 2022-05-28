@@ -38,7 +38,7 @@ const UserProfile = props => {
                     product={product}
                   />
                 </div>
-                <button className="btn is-danger" onClick={sold} id={product.pid}>Sold</button>
+                <button className="button is-danger" onClick={sold} id={product.pid}>Sold</button>
               </div>
             ))
           ) : (
