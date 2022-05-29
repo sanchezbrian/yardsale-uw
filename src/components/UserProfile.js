@@ -13,12 +13,13 @@ const UserProfile = props => {
    userProducts = products.filter(product => user.email === product.email)
   }
 
-  function sold(e) {
+  function sold(e, index) {
     const database = getDatabase();
     update(ref(database, 'Post/' + e.target.id), {
       sold: 1
     }).catch(alert);
-    alert("Item sold");
+    //alert("Item sold");
+    props.context.markItemSold(e.target.id);
   }
 
   return (
@@ -31,14 +32,15 @@ const UserProfile = props => {
       <div className="container">
         <div className="column columns is-multiline">
           {userProducts && userProducts.length ? (
-            userProducts.map((product) => (
+            userProducts.map((product, index) => (
               <div className="column is-one-quarter" key={product.pid}>
                 <div className="column is-align-content-space-around">
                   <ProductItem
                     product={product}
                   />
+                  {product.sold ? <button className="button is-danger is-static" id={product.pid}>Sold</button> :
+                                <button className="button is-danger" onClick={(e) => {sold(e,index)}} id={product.pid}>Mark as Sold</button> }
                 </div>
-                <button className="button is-danger" onClick={sold} id={product.pid}>Sold</button>
               </div>
             ))
           ) : (

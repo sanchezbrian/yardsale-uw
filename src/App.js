@@ -31,6 +31,15 @@ export default class App extends Component {
     this.setState({products: arr});
   }
 
+  markItemSold = (pid) => {
+    let products = [...this.state.products];
+    let index = products.findIndex((product) => product.pid === pid);
+    let product = {...products[index]};
+    product.sold = 1;
+    products[index] = product;
+    this.setState({products: products});
+  }
+
   addProduct = (product, callback) => {
     let products = this.state.products.slice();
     products.push(product);
@@ -78,7 +87,8 @@ export default class App extends Component {
         ...this.state,
         addProduct: this.addProduct,
         login:this.login,
-        loginUser:this.loginUser}}
+        loginUser:this.loginUser,
+        markItemSold:this.markItemSold}}
       >
       <Router>
         <div className="App">
