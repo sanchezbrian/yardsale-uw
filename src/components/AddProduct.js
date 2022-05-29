@@ -37,13 +37,13 @@ class AddProduct extends Component {
 
       this.props.context.addProduct(
         {
-          id,
-          name,
-          price,
-          description,
-          email,
-          imageName,
-          sold,
+          id:id,
+          name:name,
+          price:price,
+          description:description,
+          email:email,
+          image:imageName,
+          sold:sold,
         },
         () => this.setState(initState)
       );
