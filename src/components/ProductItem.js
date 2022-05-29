@@ -1,21 +1,53 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 import { Modal, Button } from "react-bootstrap";
+import { getStorage, ref as sRef, getDownloadURL  } from "firebase/storage";
 
 const ProductItem = (props) => {
   const { product } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const [url, setURL] = useState("");
+
+
+  useEffect(() => {
+    display();
+  });
+
+  function display() {
+    const storage = getStorage();
+    let image = product.image;
+    let path = `images/${image}`;
+    let img;
+    getDownloadURL(sRef(storage, path))
+      .then((url) => {
+
+        setURL(url);
+        // Or inserted into an <img> element
+        // img = document.getElementById(product.image);
+        // img.setAttribute('src', url);
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+
+    return (<>
+      <img src={img} alt="Error" style={{ width: 50, height: 50 }} />
+      Get an umbrella, it will rain today!
+    </>);
+  }
 
   function toggleModal() {
     setIsOpen(!isOpen);
   }
+
 
   return (
     <div className="card">
       <div className="card-image" onClick={toggleModal}>
         <figure className="image is-square">
           <img
-            src="https://bulma.io/images/placeholders/128x128.png"
+            id={product.image}
+            src={url}
             alt="Placeholder"
           ></img>
         </figure>
@@ -36,7 +68,7 @@ const ProductItem = (props) => {
               <div>
                 <img
                   className="product-photo"
-                  src="https://bulma.io/images/placeholders/128x128.png"
+                  src={url}
                   alt="Placeholder"
                 ></img>
               </div>
