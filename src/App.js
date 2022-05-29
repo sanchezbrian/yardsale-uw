@@ -123,8 +123,8 @@ export default class App extends Component {
                     </Link>
                   )}
                   {this.state.user && (
-                    <Link to="/user-profile" className="navbar-item">
-                      User profile
+                    <Link to="/my-products" className="navbar-item">
+                      My Products
                     </Link>
                   )}
                   {!this.state.user ? (
@@ -144,7 +144,7 @@ export default class App extends Component {
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/products" element={<MainProductList/>} />
             <Route exact path="/add-product" element={<AddProduct/>} />
-            <Route exact path="/user-profile" element={<UserProfile/>} />
+            <Route exact path="/my-products" element={<UserProfile/>} />
           </Routes>
         </div>
       </Router>
