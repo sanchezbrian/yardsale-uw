@@ -47,6 +47,7 @@ class Login extends Component {
           this.setUser(data.name, data.email, data.phone_number, data.uid);
         } else {
           const { name, number } = this.state;
+          this.setState({redirect:true});
           if (!name || !number) {
             return this.setState({ error: "Fill all fields!" });
           }
@@ -86,7 +87,7 @@ class Login extends Component {
   };
 
   render() {
-    return !this.props.context.user ? (
+    return this.state.redirect ? <Navigate to="/" /> : !this.props.context.user ? (
       <>
         <div className="hero is-link ">
           <div className="hero-body container">
