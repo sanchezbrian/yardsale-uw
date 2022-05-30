@@ -22,11 +22,11 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description, image } = this.state;
-    const storageRef = sRef(getStorage(), `/images/${image.name}`);
-    const { user } = this.props.context;
-    let email = user.email;
-    let imageName = image.name;
     if (name && price && image) {
+      const storageRef = sRef(getStorage(), `/images/${image.name}`);
+      const { user } = this.props.context;
+      let email = user.email;
+      let imageName = image.name;
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
       // await axios.post(
@@ -58,7 +58,7 @@ class AddProduct extends Component {
       console.log(image);
       uploadBytes(storageRef, image).then((snapshot) => {
         console.log('Uploaded a blob or file!');
-      });
+      }).catch();
 
       this.setState(
         { flash: { status: 'is-success', msg: 'Product created successfully' } }
@@ -153,7 +153,7 @@ class AddProduct extends Component {
                 /> */}
               </div>
               {this.state.flash && (
-                <div className={`notification ${this.state.flash.status}`}>
+                <div id='flash' className={`notification ${this.state.flash.status}`}>
                   {this.state.flash.msg}
                 </div>
               )}

@@ -20,13 +20,10 @@ describe('<AddProduct />', function() {
     }
 
     it('Failed submit, should have name but no price', function() {
-        //const spy = spy();
-        const wrapper = mount(<AddProduct />);
+        const wrapper = shallow(<AddProduct />).dive().dive();
         const check = wrapper.find('form');
-        check.simulate("click");
-        const flash = wrapper.find("#flash");
-        cexpect(flash).to.have.length(1);
-        //console.log(wrapper.state('flash'));
-        //cexpect(check.find('').equals("Please enter name and price")).toBeTruthy();
+        check.simulate('submit', { preventDefault: () => {} });
+        const flash = wrapper.find('.notification.is-danger');
+        expect(flash.text()).toBe('Please enter name and price');
     });
 })
