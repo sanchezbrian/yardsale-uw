@@ -26,6 +26,7 @@ class AddProduct extends Component {
     const { user } = this.props.context;
     let email = user.email;
     let imageName = image.name;
+    let sold = 0;
     if (name && price && image) {
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
@@ -36,12 +37,13 @@ class AddProduct extends Component {
 
       this.props.context.addProduct(
         {
-          id,
-          name,
-          price,
-          description,
-          email,
-          imageName,
+          id:id,
+          name:name,
+          price:price,
+          description:description,
+          email:email,
+          image:imageName,
+          sold:sold,
         },
         () => this.setState(initState)
       );
@@ -52,7 +54,8 @@ class AddProduct extends Component {
         price: price,
         description: description,
         pid: id,
-        image: image.name
+        image: image.name,
+        sold: sold
       }).catch(alert);
 
       console.log(image);

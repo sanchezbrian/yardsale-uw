@@ -12,6 +12,8 @@ const MainProductList = props => {
       newProducts = products.filter(product => product.email !== user.email)
     }
 
+    let availableProducts = products.filter(product => 0 === product.sold);
+
     return (
     <>
       <div className="hero is-link">
