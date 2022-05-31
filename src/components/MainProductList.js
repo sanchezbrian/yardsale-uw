@@ -3,7 +3,14 @@ import ProductItem from "./ProductItem"
 import withContext from "../withContext"
 
 const MainProductList = props => {
-    const { products } = props.context;
+    const { products, user } = props.context;
+
+    let newProducts;
+    if (user === null) {
+      newProducts = null;
+    } else {
+      newProducts = products.filter(product => product.email !== user.email)
+    }
 
     let availableProducts = products.filter(product => 0 === product.sold);
 
@@ -17,8 +24,8 @@ const MainProductList = props => {
       <br />
       <div className="container">
         <div className="column columns is-multiline">
-          {availableProducts && availableProducts.length ? (
-            availableProducts.map((product) => (
+          {newProducts && newProducts.length ? (
+            newProducts.map((product) => (
               <div className ="column is-one-quarter" key={product.id}>
                 <div className="column is-align-content-space-around">
               <ProductItem
