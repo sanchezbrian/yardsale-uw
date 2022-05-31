@@ -91,6 +91,7 @@ class AddProduct extends Component {
               <div className="field">
                 <label className="label">Product Name: </label>
                 <input
+                  id="testName"
                   className="input"
                   type="text"
                   name="name"
@@ -102,6 +103,7 @@ class AddProduct extends Component {
               <div className="field">
                 <label className="label">Price: </label>
                 <input
+                  id="testPrice"
                   className="input"
                   type="number"
                   name="price"
