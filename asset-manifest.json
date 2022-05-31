@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/yardsale-uw/static/css/main.f7026c57.css",
-    "main.js": "/yardsale-uw/static/js/main.b81becf5.js",
+    "main.js": "/yardsale-uw/static/js/main.14949d21.js",
     "static/js/787.8762b7b0.chunk.js": "/yardsale-uw/static/js/787.8762b7b0.chunk.js",
     "index.html": "/yardsale-uw/index.html",
     "main.f7026c57.css.map": "/yardsale-uw/static/css/main.f7026c57.css.map",
-    "main.b81becf5.js.map": "/yardsale-uw/static/js/main.b81becf5.js.map",
+    "main.14949d21.js.map": "/yardsale-uw/static/js/main.14949d21.js.map",
     "787.8762b7b0.chunk.js.map": "/yardsale-uw/static/js/787.8762b7b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f7026c57.css",
-    "static/js/main.b81becf5.js"
+    "static/js/main.14949d21.js"
   ]
 }
