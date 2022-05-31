@@ -9,10 +9,8 @@ const MainProductList = props => {
     if (user === null) {
       newProducts = null;
     } else {
-      newProducts = products.filter(product => product.email !== user.email)
+      newProducts = products.filter(product => product.email !== user.email && 0 === product.sold)
     }
-
-    let availableProducts = products.filter(product => 0 === product.sold);
 
     return (
     <>
