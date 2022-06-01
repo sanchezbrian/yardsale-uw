@@ -90,7 +90,7 @@ export default class App extends Component {
         loginUser:this.loginUser,
         markItemSold:this.markItemSold}}
       >
-      <Router>
+      <Router basename="/yardsale-uw">
         <div className="App">
           <nav
           className='navbar container'
