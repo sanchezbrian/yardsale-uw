@@ -50,9 +50,12 @@ Straightforward and easy to use for users (Good UI & UX)
 * Ability for user to mark their item as sold
 
 ### Software Toolset
-User Interface: On the front end, we will be creating a website application interface using JavaScript and React. May switch to a web application if that is more feasible.
+User Interface: On the front end, we will be creating a website application interface using JavaScript and React.
+
 Process Management: Pull data from the database, run algorithms, process the data, and push the data to the Client-side frontend using primarily Java.
-User Database and Product Database and other required databases such as favorites, etc.: SQL Databases, may look at other types of DBMS (cloud including) if they are more suitable to our needs.
+
+Database: Firebase
+
 Source Control: Github
 
 ### Yardsale-UW Living Document
