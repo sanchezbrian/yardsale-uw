@@ -47,8 +47,11 @@ class Login extends Component {
           this.setUser(data.name, data.email, data.phone_number, data.uid);
         } else {
           const { name, number } = this.state;
+          this.setState({redirect:true});
           if (!name || !number) {
-            return this.setState({ error: "Fill all fields!" });
+            return this.setState(
+              { flash: { status: 'is-danger', msg: 'Email is not yet registered. Please fill in all fields and login again!' } }
+            );
           }
           set(ref(db, 'User/' + uid), {
             email: res.user.email,
@@ -68,7 +71,7 @@ class Login extends Component {
     })
   }
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
+  handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "", flash:"" });
 
   login = (e) => {
     e.preventDefault();
@@ -98,7 +101,8 @@ class Login extends Component {
         <form onSubmit={this.signInWithGoogle}>
           <div className="columns is-mobile is-centered">
             <div className="column is-one-third">
-              <div className="field">
+              {this.state.redirect && (
+                <div className="field">
                 <label className="label">Full Name: </label>
                 <input
                   className="input"
@@ -107,7 +111,9 @@ class Login extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <div className="field">
+              )}
+              {this.state.redirect && (
+                <div className="field">
                 <label className="label">Phone Number: </label>
                 <input
                   className="input"
@@ -116,14 +122,17 @@ class Login extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              {this.state.error && (
-                <div className="has-text-danger">{this.state.error}</div>
+              )}
+              {this.state.flash && (
+                <div className={`notification ${this.state.flash.status}`}>
+                  {this.state.flash.msg}
+                </div>
               )}
               <div className="field is-clearfix">
                 <button
-                  className="button is-primary is-outlined is-pulled-right"
+                  className="button is-primary is-outlined is-fullwidth"
                 >
-                  Submit
+                  Login with UW NetID
                 </button>
               </div>
             </div>

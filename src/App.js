@@ -31,6 +31,15 @@ export default class App extends Component {
     this.setState({products: arr});
   }
 
+  markItemSold = (pid) => {
+    let products = [...this.state.products];
+    let index = products.findIndex((product) => product.pid === pid);
+    let product = {...products[index]};
+    product.sold = 1;
+    products[index] = product;
+    this.setState({products: products});
+  }
+
   addProduct = (product, callback) => {
     let products = this.state.products.slice();
     products.push(product);
@@ -78,9 +87,10 @@ export default class App extends Component {
         ...this.state,
         addProduct: this.addProduct,
         login:this.login,
-        loginUser:this.loginUser}}
+        loginUser:this.loginUser,
+        markItemSold:this.markItemSold}}
       >
-      <Router>
+      <Router basename="/yardsale-uw">
         <div className="App">
           <nav
           className='navbar container'
@@ -117,22 +127,17 @@ export default class App extends Component {
                     Add Product
                   </Link>
                 )}
-                  {!this.state.user && (
-                    <Link to="/" className="navbar-item">
-                      Sign Up
-                    </Link>
-                  )}
                   {this.state.user && (
-                    <Link to="/user-profile" className="navbar-item">
-                      User profile
+                    <Link to="/my-products" className="navbar-item">
+                      My Products
                     </Link>
                   )}
                   {!this.state.user ? (
-                    <Link to="/login" className="navbar-item">
+                    <Link to="/" className="navbar-item">
                        Login
                     </Link>
                   ) : (
-                    <Link to="/login" onClick={this.logout} className="navbar-item">
+                    <Link to="/" onClick={this.logout} className="navbar-item">
                       Logout
                     </Link>
                 )}
@@ -140,11 +145,10 @@ export default class App extends Component {
             </div>
           </nav>
           <Routes>
-            <Route exact path="/" element={<Signup/>} />
-            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/" element={<Login/>} />
             <Route exact path="/products" element={<MainProductList/>} />
             <Route exact path="/add-product" element={<AddProduct/>} />
-            <Route exact path="/user-profile" element={<UserProfile/>} />
+            <Route exact path="/my-products" element={<UserProfile/>} />
           </Routes>
         </div>
       </Router>

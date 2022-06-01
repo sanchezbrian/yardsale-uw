@@ -22,6 +22,11 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description, image } = this.state;
+    const storageRef = sRef(getStorage(), `/images/${image.name}`);
+    const { user } = this.props.context;
+    let email = user.email;
+    let imageName = image.name;
+    let sold = 0;
     if (name && price && image) {
       const storageRef = sRef(getStorage(), `/images/${image.name}`);
       const { user } = this.props.context;
@@ -36,12 +41,13 @@ class AddProduct extends Component {
 
       this.props.context.addProduct(
         {
-          id,
-          name,
-          price,
-          description,
-          email,
-          imageName,
+          id:id,
+          name:name,
+          price:price,
+          description:description,
+          email:email,
+          image:imageName,
+          sold:sold,
         },
         () => this.setState(initState)
       );
@@ -52,7 +58,8 @@ class AddProduct extends Component {
         price: price,
         description: description,
         pid: id,
-        image: image.name
+        image: image.name,
+        sold: sold
       }).catch(alert);
 
       console.log(image);
@@ -66,7 +73,7 @@ class AddProduct extends Component {
 
     } else {
       this.setState(
-        { flash: { status: 'is-danger', msg: 'Please enter name and price' } }
+        { flash: { status: 'is-danger', msg: 'Please enter name and price and image' } }
       );
     }
   };
