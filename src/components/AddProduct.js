@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import withContext from "../withContext";
-import { Redirect } from "react-router-dom";
-import { getDatabase, ref, push, child, get, set } from "firebase/database";
-import axios from 'axios';
+// import { Redirect } from "react-router-dom";
+import { getDatabase, ref, set } from "firebase/database";
+// import axios from 'axios';
 // import { storage } from "../index";
 import { getStorage, ref as sRef, uploadBytes } from "firebase/storage";
 
@@ -22,12 +22,12 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description, image } = this.state;
-    const storageRef = sRef(getStorage(), `/images/${image.name}`);
-    const { user } = this.props.context;
-    let email = user.email;
-    let imageName = image.name;
-    let sold = 0;
     if (name && price && image) {
+      const storageRef = sRef(getStorage(), `/images/${image.name}`);
+      const { user } = this.props.context;
+      let email = user.email;
+      let imageName = image.name;
+      let sold = 0;
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
       // await axios.post(
@@ -61,7 +61,7 @@ class AddProduct extends Component {
       console.log(image);
       uploadBytes(storageRef, image).then((snapshot) => {
         console.log('Uploaded a blob or file!');
-      });
+      }).catch();
 
       this.setState(
         { flash: { status: 'is-success', msg: 'Product created successfully' } }
@@ -77,7 +77,7 @@ class AddProduct extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
   render() {
-    const { name, price, description, image } = this.state;
+    const { name, price, description } = this.state;
 
     return (
       <>
@@ -156,7 +156,7 @@ class AddProduct extends Component {
                 /> */}
               </div>
               {this.state.flash && (
-                <div className={`notification ${this.state.flash.status}`}>
+                <div id='flash' className={`notification ${this.state.flash.status}`}>
                   {this.state.flash.msg}
                 </div>
               )}

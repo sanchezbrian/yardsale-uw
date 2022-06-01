@@ -17,7 +17,6 @@ const ProductItem = (props) => {
     const storage = getStorage();
     let image = product.image;
     let path = `images/${image}`;
-    let img;
     getDownloadURL(sRef(storage, path))
       .then((url) => {
 
@@ -29,11 +28,6 @@ const ProductItem = (props) => {
       .catch((error) => {
         // Handle any errors
       });
-
-    return (<>
-      <img src={img} alt="Error" style={{ width: 50, height: 50 }} />
-      Get an umbrella, it will rain today!
-    </>);
   }
 
   function toggleModal() {
@@ -43,7 +37,7 @@ const ProductItem = (props) => {
 
   return (
     <div className="card">
-      <div className="card-image" onClick={toggleModal}>
+      <div id="clickDiv" className="card-image" onClick={toggleModal}>
         <figure className="image is-square">
           <img
             id={product.image}
@@ -62,7 +56,7 @@ const ProductItem = (props) => {
           </div>
           <Modal size="xl" show={isOpen} onHide={toggleModal}>
             <Modal.Header>
-              <Modal.Title>{product.name}</Modal.Title>
+              <Modal.Title id="pName">{product.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <div>
@@ -76,11 +70,11 @@ const ProductItem = (props) => {
             <Modal.Header>
               <Modal.Title>Email</Modal.Title>
             </Modal.Header>
-            <div className="box">{product.email}</div>
+            <div id="pEmail" className="box">{product.email}</div>
             <Modal.Header>
               <Modal.Title>Description</Modal.Title>
             </Modal.Header>
-            <div className="box">{product.description}</div>
+            <div id="pDescription" className="box">{product.description}</div>
             <Modal.Footer>
               <Button variant="secondary" onClick={toggleModal}>
                 Close
