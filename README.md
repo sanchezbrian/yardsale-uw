@@ -1,6 +1,8 @@
 # Yardsale-UW
 ## Group Project for CSE 403
 
+## Public Webiste URL: [https://sanchezbrian.github.io/yardsale-uw/](https://sanchezbrian.github.io/yardsale-uw/) ##
+
 ### Project Summary
 Students can use an app where they have a scam-free platform to find fellow UW students and staff to sell/buy used items. Trust is a very important part of any e-commerce application, and delivering on and maintaining that trust makes for a very easy-to-use and quick to recommend the app for the entire UW community.
 
