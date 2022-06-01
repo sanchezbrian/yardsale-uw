@@ -14,8 +14,8 @@ describe('<ProductItem/>', function() {
     const product = {
         name: "Test Item",
         email: "test@uw.edu",
-        price: 0,
-        description: "test",
+        price: 12,
+        description: "test description is correct",
         pid: 0,
         image: "test.png"
     }
@@ -36,6 +36,20 @@ describe('<ProductItem/>', function() {
         wrapper.find(".card-image").simulate("click");
         wrapper.find(".card-image").simulate("click");
         expect(wrapper.find('Modal').prop('show')).toBeFalsy();
+    });
+
+    it("item fields are correct", function() {
+        const wrapper = shallow(<ProductItem product={product}/>);
+        expect(wrapper.find('b').text()).toBe("Test Item $12");
+        expect(wrapper.find('Modal').prop('show')).toBeFalsy();
+    });
+
+    it("item fields are correct on Modal", function() {
+        const wrapper = shallow(<ProductItem product={product}/>);
+        wrapper.find(".card-image").simulate("click");
+        expect(wrapper.find('ModalTitle[id="pName"]').text()).toBe("Test Item");
+        expect(wrapper.find('div[id="pEmail"]').text()).toBe("test@uw.edu");
+        expect(wrapper.find('div[id="pDescription"]').text()).toBe("test description is correct");
     });
 })
 

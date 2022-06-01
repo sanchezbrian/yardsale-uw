@@ -56,7 +56,7 @@ const ProductItem = (props) => {
           </div>
           <Modal size="xl" show={isOpen} onHide={toggleModal}>
             <Modal.Header>
-              <Modal.Title>{product.name}</Modal.Title>
+              <Modal.Title id="pName">{product.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <div>
@@ -70,11 +70,11 @@ const ProductItem = (props) => {
             <Modal.Header>
               <Modal.Title>Email</Modal.Title>
             </Modal.Header>
-            <div className="box">{product.email}</div>
+            <div id="pEmail" className="box">{product.email}</div>
             <Modal.Header>
               <Modal.Title>Description</Modal.Title>
             </Modal.Header>
-            <div className="box">{product.description}</div>
+            <div id="pDescription" className="box">{product.description}</div>
             <Modal.Footer>
               <Button variant="secondary" onClick={toggleModal}>
                 Close
