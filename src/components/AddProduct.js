@@ -22,16 +22,12 @@ class AddProduct extends Component {
   save = async (e) => {
     e.preventDefault();
     const { name, price, description, image } = this.state;
-    const storageRef = sRef(getStorage(), `/images/${image.name}`);
-    const { user } = this.props.context;
-    let email = user.email;
-    let imageName = image.name;
-    let sold = 0;
     if (name && price && image) {
       const storageRef = sRef(getStorage(), `/images/${image.name}`);
       const { user } = this.props.context;
       let email = user.email;
       let imageName = image.name;
+      let sold = 0;
       const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
       // await axios.post(

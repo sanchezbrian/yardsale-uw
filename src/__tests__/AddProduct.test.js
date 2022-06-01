@@ -24,6 +24,6 @@ describe('<AddProduct />', function() {
         const check = wrapper.find('form');
         check.simulate('submit', { preventDefault: () => {} });
         const flash = wrapper.find('.notification.is-danger');
-        expect(flash.text()).toBe('Please enter name and price');
+        expect(flash.text()).toBe('Please enter name and price and image');
     });
 })
