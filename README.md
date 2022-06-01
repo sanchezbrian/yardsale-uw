@@ -45,6 +45,7 @@ Straightforward and easy to use for users (Good UI & UX)
 * Ability for a user to login and authenticate
 * Allow a user to click on an item into an expanded view to view a more in-depth item description.
 * Ability for a user to get the seller's email to send an email to a seller regarding an item.
+* Ability for user to mark their item as sold
 
 ### Software Toolset
 User Interface: On the front end, we will be creating a website application interface using JavaScript and React. May switch to a web application if that is more feasible.
@@ -62,17 +63,11 @@ https://github.com/sanchezbrian/yardsale-uw.git
 https://docs.google.com/document/d/1X6cDkh0zGpwjwSFYTDaUMRYVx3LB3jjG6I4oAcKU0Vk/edit?usp=sharing
 
 ### Instructions:
-#### How to run the application:
-  - packages you need to install before running the application - node
-  npm install - [react-router-dom, json-server json-server-auth, axios, jwt-decode, bulma]
-  - npm start to start the application on default web browser
+#### How to run the application: 
+Our website is publically accessible through this [https://sanchezbrian.github.io/yardsale-uw/](https://sanchezbrian.github.io/yardsale-uw/)
 
-  #### To test - run npm install followed by npm test. This happens automatically as we set up github actions
-  #### to build and test everytime a new push/pull is made.
+#### User Manual:
+Access the User Manual through [here](https://github.com/sanchezbrian/yardsale-uw/blob/main/USER_MANUAL.md)
 
-### Functional Use Cases at the time of Beta Release:
-Users can sign up and log in
-User can add products after logging in
-Users can view and click on existing products to reveal seller information
-
-
+#### Developer Guidelines:
+Access the Developer Guidelines through here [here](https://github.com/sanchezbrian/yardsale-uw/blob/main/DEVELOPER_GUIDELINES.md)
